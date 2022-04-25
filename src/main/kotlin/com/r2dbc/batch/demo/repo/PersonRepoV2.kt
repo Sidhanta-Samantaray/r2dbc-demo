@@ -4,14 +4,16 @@ import com.r2dbc.batch.demo.model.Person
 import com.r2dbc.batch.demo.model.PersonsMapper
 import io.r2dbc.spi.Connection
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.flatMapMerge
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.reactive.asFlow
 import kotlinx.coroutines.reactive.awaitSingle
 import org.springframework.r2dbc.core.DatabaseClient
 import org.springframework.r2dbc.core.awaitOne
 import org.springframework.r2dbc.core.flow
 import org.springframework.stereotype.Repository
-import reactor.core.publisher.Flux
 
 @Repository
 class PersonRepoV2(private val databaseClient: DatabaseClient, private val personsMapper: PersonsMapper) {

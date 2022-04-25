@@ -8,6 +8,7 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Repository
+@Deprecated("Refer V2 Repo with Co Routines")
 class PersonsRepo(val databaseClient: DatabaseClient, val personsMapper: PersonsMapper) {
     val insertSql = "INSERT INTO persons(first_name, last_name, age) values(:firstName,:lastName,:age)"
     val insertSql2 = "INSERT INTO persons(first_name, last_name, age) values($1,$2,$3)"

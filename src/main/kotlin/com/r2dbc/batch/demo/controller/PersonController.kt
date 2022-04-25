@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
+@Deprecated("Refer V2 Controller with Co Routines")
 @RestController
 @RequestMapping("/person")
 class PersonController(val personsRepo: PersonsRepo) {
